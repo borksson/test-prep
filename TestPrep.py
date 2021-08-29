@@ -11,9 +11,18 @@
 # directory.
 
 import json
-from os import listdir, path
+from os import listdir, path, chdir, getcwd
+
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+
+SAVE_DATA = "/home/borkson/Code/Python/TestPrep/groupNotes.json"
+builder = Gtk.Builder()
+builder.add_from_file("FolderSelect.glade")
 
 #Objects: card (term/definition, question/answer), cardSet (list of card objects, toJSON function)
+# Handler (GTK application handler)
 class card(object):
 	def __init__(self, term, definition):
 		self.term = term
@@ -62,6 +71,19 @@ class CardSet(object):
 		for card in self.cards:
 			card.printCard()
 
+class Handler:
+    def onDestroy(self, *args):
+    	saveSets()
+    	print('Sets saved.')
+    	Gtk.main_quit()
+
+    def buttonClick(self, folderSelection):
+        print("Selected: ", folderSelection.get_filename(), 
+        	builder.get_object("cardSetName").get_text())
+        for file in listdir(folderSelection.get_filename()):
+        	scanNote(folderSelection.get_filename()+'/'+file, findSet(builder.get_object("cardSetName").get_text()))
+        	createQuizlet(folderSelection.get_filename(), findSet(builder.get_object("cardSetName").get_text()))
+        printSets()
 #Functions: importSets (import groupNote.json files as active objects), scanNote(import noteFile and append to cardSet)
 
 def importSets(JSONfile):
@@ -81,22 +103,25 @@ def importSets(JSONfile):
 	return sets
 
 def scanNote(noteFile, cardSet):
-	if cardSet == None:
-		print("Create set")
-		cardSet = CardSet(setName = "UnnamedSet") #FIXME: generate new random name that doesn't exist in sets
-		sets.append(cardSet)
 	#FIXME: Add scanDocx function
+	print(noteFile, cardSet)
 	with open(noteFile) as f:
 		text = f.read()
+		print(text)
 	f.close()
-	a = [card[:card.find("#E")].split("#A:") for card in text.split('#T:') if "#E" in card]
+	a = [card[:card.find("#E")].split("#D:") for card in text.split('#T:') if "#E" in card]
 	for card in a:
 		cardSet.addCard(card[0].strip(),card[1].strip())
 
 def findSet(setName):
 	for _set in sets:
+		print(_set.setName, setName)
 		if _set.setName == setName:
 			return _set
+	print("No set found. Creating set.")
+	cardSet = CardSet(setName = setName) #FIXME: generate new random name that doesn't exist in sets
+	sets.append(cardSet)
+	return cardSet
 
 def printSets():
 	for _set in sets: _set.printSet()
@@ -108,36 +133,45 @@ def setsToJSON():
 	return export
 
 def saveSets():
-	with open("groupNotes.json", "w") as f:
+	with open(SAVE_DATA, "w") as f:
 		json.dump(setsToJSON(), f)
 	f.close()
 
-def createQuizlet(cardSet):
+def createQuizlet(wd,cardSet):
 	#FIXME: Scan for delilimters in terms and definitions (, & ;)
-	with open(cardSet.setName+"_quizlet.txt", "w") as f: 
+	with open(wd+'/'+cardSet.setName+"_quizlet.txt", "w") as f: 
 		f.write(cardSet.toQuizlet())
 	f.close()
 
 #Open and load GroupNotes (groupNote.json will contain all saved sets)
-sets = importSets("groupNotes.json")
-
-print(findSet("Group Note Test"))
+sets = importSets(SAVE_DATA)
+#print(findSet("Group Note Test"))
 
 #Scan selected note documents
 #Identify KeyNotes
 #Create KeyNote objects, and add them to GroupNote
-scanNote("ClassName_2.3.20.txt", findSet("Group Note Test"))
+
+#scanNote("ClassName_2.3.20.txt", findSet("Group Note Test"))
 printSets()
 
+print('Sets loaded.')
 #Save to JSON
-saveSets()
+#saveSets()
 
 #Give option to create Quizlet document
 #QUIZLET BULK TERM UPLOAD: Separate terms and definitions with a !comma!, tab, or dash.
 #Separate rows with a !semicolon! or a new line. Each row of your document will become
 #a distinct card.
-createQuizlet(findSet("UnnamedSet"))
+
+#createQuizlet(findSet("UnnamedSet"))
 
 #Optional TERM/DEFINITION could be a QUESTION/SINGLE_ANSWER or 
 #QUESTION_MULTIPLE CHOICE/SINGLE_ANSWER
 
+#Application init
+builder.connect_signals(Handler())
+
+window = builder.get_object("window1")
+window.show_all()
+
+Gtk.main()
