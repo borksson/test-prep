@@ -1,16 +1,240 @@
 {
   "name": "Test Prep",
+  "notes_dir": "/Users/borkson/Documents/Notes/Winter.2022/REL225.FoundationsOfTheRestoration/",
   "set": {
-    "Test Set": [
+    "REL225.FoundationsOfTheRestoration.Midterm_1": [
       {
-        "key": "Test",
-        "value": "Definition"
+        "key": "What are the foundations of the Restoration?",
+        "value": "They are the bedrock for testimony"
       },
       {
-        "key": "Test2",
-        "value": "Definition2"
+        "key": "Epistemology",
+        "value": "philosophy of knowledge or knowing"
+      },
+      {
+        "key": "Meta-cognition",
+        "value": "awareness of one's thoughts"
+      },
+      {
+        "key": "How did Joseph find his stone?",
+        "value": "He looked into Sally's green stone and saw a stone that was his."
+      },
+      {
+        "key": "What did Alma teach his son about seer stones?",
+        "value": "He prophesies that the Lord would reveal stones for translation and revelation"
+      },
+      {
+        "key": "Why did Joseph have a stone?",
+        "value": "It was given in preparation to receive the Urimm and Thummin"
+      },
+      {
+        "key": "How was the Book of Mormon brought forth?",
+        "value": "By the gift and power of God"
+      },
+      {
+        "key": "How was the BOM manuscript written?",
+        "value": "The manuscript is written by speaking the translation"
+      },
+      {
+        "key": "Where do we learn about the life and prophetic process of Joseph Smith?",
+        "value": "from his autobiography"
+      },
+      {
+        "key": "Josephs tension",
+        "value": "feeling that as a prophet he was inadequate to record doctrine"
+      },
+      {
+        "key": "What was the pattern of Josephs conversion?",
+        "value": "he was a thinker, he decided first that atheism is not correct and then moves to deism and then trys methodism"
+      },
+      {
+        "key": "What did Joseph find with the plates?",
+        "value": "The urimmm and thunimm, which he used to translate the plates"
+      },
+      {
+        "key": "How did Martin Harris describe the translation process?",
+        "value": "Joseph would look into a hat with the stone and read the sentences, if the sentence was wrong it would remain until corrected."
+      },
+      {
+        "key": "When did Joseph translate the Book of Mormon?",
+        "value": "April 7 - June 11 1829"
+      },
+      {
+        "key": "Why do we have the Book of Mormon?",
+        "value": "It is a testament of Jesus Christ"
+      },
+      {
+        "key": "Alex Campbell",
+        "value": "a preacher who translated the bible, and Joseph pulls many of his converts away, that is frustrating to him"
+      },
+      {
+        "key": "Mark Twain",
+        "value": "he also contented with the book of Mormon, and brought up several points on its uselessness"
+      },
+      {
+        "key": "Sarah Pierrepont & Jonathan Edwards",
+        "value": "they got married in 1727, while Sarah was praying she was impressed to call God her father. she felt that Jesus and God were separate people"
+      },
+      {
+        "key": "Who was the most important theologian?",
+        "value": "John Calvin, because his beliefs will be debated by Joseph's contemporaries"
+      },
+      {
+        "key": "Sinners in the Hands of an Angry God (1741)",
+        "value": "sermon given by Jonathan Edwards on God's mercy"
+      },
+      {
+        "key": "Purpose of Calvinist sermons",
+        "value": "educate people of the true nature of God, so they could praise God"
+      },
+      {
+        "key": "Jacobus Arminius",
+        "value": "Arminianist, started as a Calvinist but changed His beliefs"
+      },
+      {
+        "key": "Arminiansim",
+        "value": "fallen nature of mankind, God's blessings conditional, Christ atoned for all, so that all who choose to act on God's conditions may be saved, people can choose to resist God's grace, God want's everyone to be saved but only few will meet the conditions on which salvation depends, agency"
+      },
+      {
+        "key": "John Wesley",
+        "value": "powerful preacher of Arminiansim, teachings lead to the Methodist church"
+      },
+      {
+        "key": "Universalism",
+        "value": "God will save everyone, and there are nothing we can do to change that, it doesn't make sense that God would create children and then damn them to hell for all eternity, universal salvation"
+      },
+      {
+        "key": "Thomas Paine",
+        "value": "Wrote the age of reason and promoted the doctrine of realism"
+      },
+      {
+        "key": "Deism",
+        "value": "there is no fall, and God and Christ are distilled through philosophy. Jesus was not a savior but a philosopher"
+      },
+      {
+        "key": "Grandpa Smith (on dad's side)",
+        "value": "he and his wife started Calvinist but migrated to Universalism and wrote \"Jesus could easily save all as he could any\""
+      },
+      {
+        "key": "Lucy Mack Smith's Dream",
+        "value": "there were two trees in a field and one is stiff and motionless, the other is flowing and wavy. Lucy understood this dream that her husband was the flowing tree and would accept the gospel"
+      },
+      {
+        "key": "ultra-expertierism",
+        "value": "the belief that expertise in one area precludes expertise in another"
+      },
+      {
+        "key": "Why should we seek?",
+        "value": "because our faith isn't perfect"
+      },
+      {
+        "key": "How do we seek?",
+        "value": "we teach each other, and seek diligently in the best books by study and faith"
+      },
+      {
+        "key": "Parmenides beliefs",
+        "value": "born about 515 BC, changed is explained by something unchanging, all things that change are a part of one unchanging thing, logic trumps sensory perception"
+      },
+      {
+        "key": "Christianity - quick history",
+        "value": "Jesus lived and died, the apostles recorded and testified, then they reported apostasy, after the apostles left people began to create theology based in philosophy"
+      },
+      {
+        "key": "apostasy",
+        "value": "we lose the historical connection of eyewitness apostles and turn to philosophy instead of revelation"
+      },
+      {
+        "key": "Parmenides assumption",
+        "value": "God is completely separate from us and defined by philosophy"
+      },
+      {
+        "key": "The Parmedian One",
+        "value": "the ultimate one is unchanging"
+      },
+      {
+        "key": "the impassable God",
+        "value": "God does not feel or emote, is nothing like us"
+      },
+      {
+        "key": "Origin of Creeds",
+        "value": "in 425 the Romans gathered to formalize christian belief"
+      },
+      {
+        "key": "Calvinism",
+        "value": "Calvinism emphasizes God's sovereignty; total depravity, unconditional election, limited atonement, irresistible grace, perseverance of the saved"
+      },
+      {
+        "key": "total depravity",
+        "value": "because of the fall, we are completely removed from God. we are not good in any way. we are fallen"
+      },
+      {
+        "key": "unconditional election",
+        "value": "God will save a few of His children unconditionally"
+      },
+      {
+        "key": "limited atonement",
+        "value": "Christ only atoned for some"
+      },
+      {
+        "key": "irresistible grace",
+        "value": "if you have been saved you can't change that fact"
+      },
+      {
+        "key": "perseverance of the saved",
+        "value": "once saved always saved"
+      },
+      {
+        "key": "Did Joseph insinuate that there was religious excitement in Palmyra?",
+        "value": "No, he said that there was excitement in the whole area."
+      },
+      {
+        "key": "Was the first vision taught frequently before the modern day?",
+        "value": "No"
+      },
+      {
+        "key": "When was the earliest account of the first vision given?",
+        "value": "12 years after the vision."
+      },
+      {
+        "key": "CES Letter",
+        "value": "A letter that Jeremy Runnells wrote which questions historical discrepancies about the Church"
+      },
+      {
+        "key": "Sources of the First Vision",
+        "value": "1832 account, pg. 24 from journal in 1835, 1838 most used, 1842 articles of faith"
+      },
+      {
+        "key": "Why was Joesph brought to court?",
+        "value": "It was about his seeing capabilities and treasure hunting."
+      },
+      {
+        "key": "Why were the smith's in a state of anxiety?",
+        "value": "The were renting the land and had to pay monthly."
+      },
+      {
+        "key": "What happened after Joesph's vision?",
+        "value": "He told a preacher about it, and the preacher told him that those things didn't happen anymore"
+      },
+      {
+        "key": "Was the hill cumorah called hill cumorah in ancient times?",
+        "value": "it is unknown."
+      },
+      {
+        "key": "What was a money digger?",
+        "value": "someone who would use aid of a seer to find a buried treasure"
+      },
+      {
+        "key": "means",
+        "value": "means of seeing things"
+      },
+      {
+        "key": "Stone in the Frame",
+        "value": "a seeing stone, represents the mythology and folklore of the time"
+      },
+      {
+        "key": "Facts about the past",
+        "value": "he had a reputation for seeing, and he used that ability to search for buried treasure"
       }
-    ],
-    "Test Set 2": []
+    ]
   }
 }
