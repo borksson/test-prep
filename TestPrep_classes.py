@@ -4,7 +4,6 @@ import re
 
 
 # Card Set includes Term Card and Question Card
-
 # Card (toJSON, toQuizlet, toString)
 
 class Card(object):
@@ -53,20 +52,31 @@ class CardSet(object):
 
 # App (appData, cardSetObj)
 def parse_notes(file_name):
+    card_set = []
     file_type = os.path.splitext(file_name)[1]
     if file_type == '.pdf':
         with open(file_name, 'rb') as file:
             data = os.popen("pdftotext %s -" % file_name).read()
+            cards = [m[0] for m in re.finditer('(#T.*#D.*#E)|(#Q.*#A.*#E)', data)]
+            for card in cards:
+                card = card.split('#')
+                card_set.append(Card(card[1][1:].strip(), card[2][1:].strip()))
     elif file_type == '.txt':
         with open(file_name) as file:
             data = file.read()
+            cards = [m[0] for m in re.finditer('(#T.*#D.*#E)|(#Q.*#A.*#E)', data)]
+            for card in cards:
+                card = card.split('#')
+                card_set.append(Card(card[1][1:].strip(), card[2][1:].strip()))
+    elif file_type == '.md':
+        with open(file_name) as file:
+            data = file.read()
+            cards = [m[0] for m in re.finditer('(>.*:.*\n)', data)]
+            for card in cards:
+                card = card.split(':')
+                card_set.append(Card(card[0][1:].strip(), card[1].strip()))
     else:
-        raise Exception('Invalid file type')
-    cards = [m[0] for m in re.finditer('(#T.*#D.*#E)|(#Q.*#A.*#E)', data)]
-    card_set = []
-    for card in cards:
-        card = card.split('#')
-        card_set.append(Card(card[1][1:].strip(), card[2][1:].strip()))
+        print(file_name+" is an invalid file type.")
     return card_set
 
 
@@ -97,6 +107,6 @@ class App(object):
         export = ""
         for card in self.card_sets[key].to_dict():
             export += card['key'] + '#' + card['value'] + '$'
-        with open(self.notes_dir+key+"_quizlet.txt", 'w') as file:
+        with open(self.notes_dir+'/'+key+"_quizlet.txt", 'w') as file:
             file.write(export)
 

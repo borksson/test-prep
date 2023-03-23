@@ -6,8 +6,7 @@ with open("appData.json", "r") as appData:
 
 # Operations on app
 #app.parse_dir_notes()
-#app.set_to_quizlet()
-
+app.set_to_quizlet("CS340.MIDTERM")
 
 with open("appData.json", "w") as appData:
     appData.write(app.to_string())
